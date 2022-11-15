@@ -1,44 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/join.css">
-    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <script src="https://kit.fontawesome.com/f2f40eee94.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/header.css">
-    <title>회원가입</title>
-</head>
-
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="navbar-logo">
-                    <a href="#"><img src="images/main_logo.png" alt="서울로고" /></a>
-                    <a href="#">뚜벅조</a>
-                </div>
-                <ul class="navbar-menu">
-                    <li><a href="#">둘레길 안내</a></li>
-                    <li><a href="#">둘레길 코스</a></li>
-                    <li><a href="#">이용후기</a></li>
-                    <li><a href="#">이벤트</a></li>
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">마이페이지</a></li>
-                </ul>
-                <ul class="navbar-icons">
-                    <li><a href="#"><i class="fa-brands fa-facebook n1"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram n1"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter n1"></i></a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/fragments">
+<th:block th:replace="fragments/header :: headerFragment"></th:block>
     <div class="sub_wrap">
         <div class="sub_tit">
             <h1>회원가입</h1>
@@ -89,10 +51,10 @@
 
                         <div class="gender01">
                             <div class="g_box">
-                                <input type="radio" name="f_gender" value="M"><label for="M">남성</label>
+                                <input type="radio" name="f_gender" id="M" value="M"><label for="M">남성</label>
                             </div>
                             <div class="g_box">
-                                <input type="radio" name="f_gender" value="F"><label for="F">여성</label>
+                                <input type="radio" name="f_gender" id="F" value="F"><label for="F">여성</label>
                             </div>
                         </div>
 

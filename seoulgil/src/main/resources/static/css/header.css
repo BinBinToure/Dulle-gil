@@ -57,3 +57,69 @@ a {
 .navbar-icons li {
     padding: 8px 12px;
 }
+
+
+/* 로그인 */
+
+#myDIV {
+    width: 100%;
+    position: absolute;
+    display: none;
+    border-top: 1px solid #000000;
+    text-align: center;
+    height: 90px;
+    line-height: 80px;
+    background-color: #fff;
+    transform: 1s;
+    animation: slide_login 1s;
+}
+
+#myDIV .form input:nth-child(4) {
+    border: 1px solid #ced4da;
+    border-radius: 0.5em;
+    padding: 12px;
+    width: 20em;
+    font-size: 1rem;
+    border-color: #56af53;
+    box-shadow: 0 0 0 1pt grey;
+    outline: none;
+    border-radius: 5pt;
+
+}
+
+#myDIV .form input:nth-child(2) {
+    border: 1px solid #ced4da;
+    border-radius: 0.5em;
+    padding: 12px;
+    width: 20em;
+    font-size: 1rem;
+    border-color: #56af53;
+    box-shadow: 0 0 0 1pt grey;
+    outline: none;
+    border-radius: 5pt;
+}
+
+#myDIV .form input:focus {
+    box-shadow: 0 0 5pt 5pt rgb(240, 205, 154);
+    transition: .1s;
+    border-radius: 5pt;
+    border: 0;
+
+}
+
+#myDIV .form input:last-child {
+    top: 0;
+    margin-top: 0px;
+}
+
+@keyframes slide_login {
+    0% {
+        opacity: 0;
+        margin-top: -5em;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
