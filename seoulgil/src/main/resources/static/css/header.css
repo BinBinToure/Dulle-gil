@@ -1,0 +1,59 @@
+@charset 'utf-8';
+
+* {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 헤더 */
+
+.nav-container {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f7ec;
+    padding: 8px 12px;
+}
+
+.navbar-logo {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo a {
+    padding-left: 24px;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+}
+
+.navbar-menu li {
+    padding: 8px 12px;
+}
+
+.navbar-menu li:hover {
+    background-color: rgb(240, 205, 154);
+    border-radius: 5px;
+}
+
+.navbar-icons {
+    list-style: none;
+    display: flex;
+    margin: 0 auto;
+}
+
+.navbar-icons li {
+    padding: 8px 12px;
+}
