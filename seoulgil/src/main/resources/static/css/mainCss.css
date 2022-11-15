@@ -182,6 +182,8 @@ body {
 /* 로그인 */
 
 #myDIV {
+    width: 100%;
+    position: absolute;
     display: none;
     border-top: 1px solid #000000;
     text-align: center;
