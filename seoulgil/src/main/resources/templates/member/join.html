@@ -1,43 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--헤드-->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/join.css">
-    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <script src="https://kit.fontawesome.com/f2f40eee94.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/header.css">
-    <title>회원가입</title>
+<th:block th:replace="fragments/head :: headFragment"></th:block>
 </head>
-
+<!--헤더-->
+<th:block th:replace="fragments/header :: header"></th:block>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="navbar-logo">
-                    <a href="#"><img src="images/main_logo.png" alt="서울로고" /></a>
-                    <a href="#">뚜벅조</a>
-                </div>
-                <ul class="navbar-menu">
-                    <li><a href="#">둘레길 안내</a></li>
-                    <li><a href="#">둘레길 코스</a></li>
-                    <li><a href="#">이용후기</a></li>
-                    <li><a href="#">이벤트</a></li>
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">마이페이지</a></li>
-                </ul>
-                <ul class="navbar-icons">
-                    <li><a href="#"><i class="fa-brands fa-facebook n1"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram n1"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter n1"></i></a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
     <div class="sub_wrap">
         <div class="sub_tit">
@@ -89,10 +58,10 @@
 
                         <div class="gender01">
                             <div class="g_box">
-                                <input type="radio" name="f_gender" value="M"><label for="M">남성</label>
+                                <input type="radio" name="f_gender" id="M" value="M"><label for="M">남성</label>
                             </div>
                             <div class="g_box">
-                                <input type="radio" name="f_gender" value="F"><label for="F">여성</label>
+                                <input type="radio" name="f_gender" id="F" value="F"><label for="F">여성</label>
                             </div>
                         </div>
 
@@ -160,25 +129,9 @@
 
         </div>
     </div>
-    <div class="footerWrap">
-        <footer class="footer-container">
-            <div class="item">
-                <img src="images/foot_logo.png" alt="푸터로고">
-            </div>
-            <div class="item">
-                <p>All Rights Reserved.</p>
-                <a target="_blank" href="https://icons8.com/icon/TmxHCqKpwMJk/%EB%8B%AC%EB%A0%A5-3">달력 3</a> icon by <a
-                    target="_blank" href="https://icons8.com">Icons8</a>
-            </div>
-            <div class="item sns">
-                <a href="#"><i class="fa-brands fa-facebook n1"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram n1"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter n1"></i></a>
 
-            </div>
-
-
-        </footer>
+<!--푸터-->
+    <div th:replace="fragments/footer :: footer"></div>
     </div>
 </body>
 

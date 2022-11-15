@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SeoulgilApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SeoulgilApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SeoulgilApplication.class, args);
+    }
 
 }
