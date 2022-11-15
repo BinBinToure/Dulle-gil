@@ -62,6 +62,7 @@ a {
 /* 로그인 */
 
 #myDIV {
+    z-index: 999;
     width: 100%;
     position: absolute;
     display: none;

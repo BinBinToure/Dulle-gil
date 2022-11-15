@@ -1,26 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<th:block th:fragment="headerFragment">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/join.css">
-    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/reset.css">
-    <link rel="stylesheet" href="../static/css/footer.css">
-    <script type="text/javascript" src="../static/js/common.js"></script>
-    <script src="https://kit.fontawesome.com/f2f40eee94.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../static/css/header.css">
-    <title>회원가입</title>
-  </head>
-
-  <header>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div th:fragment="header">
     <nav class="navbar">
       <div class="nav-container">
         <div class="navbar-logo">
-          <a href="#"><img src="../static/images/main/main_logo.png" alt="서울로고" /></a>
+          <a href="#"><img src="images/main/main_logo.png" alt="서울로고" /></a>
           <a href="#">뚜벅조</a>
         </div>
         <ul class="navbar-menu">
@@ -48,6 +33,4 @@
         <input type="submit" class="btn cyan rounded" value="로그인">
       </form>
     </div>
-  </header>
-</th:block>
-</html>
+</div>
