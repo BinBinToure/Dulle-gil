@@ -19,7 +19,7 @@
                     <p class="sub_bull"><span>기본정보</span></p>
                 </div>
 
-                <form name="f" method="post" action="#">
+                <form name="f" method="post"  th:action="@{/signup}">
                     <input type="hidden" name="chk_email" value="N">
                     <input type="hidden" name="p_lang" value="ko">
                     <input type="hidden" name="p_gubun" value="T"> <!-- J:일반가입, F:축제, M:식권, V:자원봉사, T:trail -->
@@ -28,7 +28,7 @@
 
                         <div class="e_mail">
                             <label for="email"></label>
-                            <input type="email" name="f_email" placeholder="이메일" onclick="clickEmail();"
+                            <input type="email" name="email" placeholder="이메일" onclick="clickEmail();"
                                 onblur="isEmail(this.name.value)" required>
                         </div>
                         <div id="info_email" class="warn_area">
@@ -42,7 +42,7 @@
 
                         <div class="pw01">
                             <label for="pw"></label>
-                            <input type="password" name="f_pwd" placeholder="비밀번호" required>
+                            <input type="password" name="password" placeholder="비밀번호" required>
                         </div>
 
                         <div class="pw02">
@@ -52,16 +52,16 @@
 
                         <div class="birth01">
                             <label for="birthday"></label>
-                            <input type="text" name="f_birthday" placeholder="생년월일 ex)19810123"
+                            <input type="text" name="f_birthday" placeholder="생년월일 ex)19810123" readonly="readonly"
                                 onblur="return chk_num(this.name);">
                         </div>
 
                         <div class="gender01">
                             <div class="g_box">
-                                <input type="radio" name="f_gender" id="M" value="M"><label for="M">남성</label>
+                                <input type="radio" name="auth" id="M" value="ROLE_ADMIN,ROLE_MEMBER"><label for="M">관리자</label>
                             </div>
                             <div class="g_box">
-                                <input type="radio" name="f_gender" id="F" value="F"><label for="F">여성</label>
+                                <input type="radio" name="auth" id="F" value="ROLE_MEMBER" checked="checked"><label for="F">일반</label>
                             </div>
                         </div>
 
@@ -75,11 +75,11 @@
                             </div>
                             -
                             <div class="number01">
-                                <input type="tel" name="f_phone2" onblur="return chk_num(this.name);">
+                                <input type="tel" name="f_phone2" onblur="return chk_num(this.name);"readonly="readonly">
                             </div>
                             -
                             <div class="number02">
-                                <input type="tel" name="f_phone3" onblur="return chk_num(this.name);">
+                                <input type="tel" name="f_phone3" onblur="return chk_num(this.name);"readonly="readonly">
                             </div>
                         </div>
                         <div class="add_area">

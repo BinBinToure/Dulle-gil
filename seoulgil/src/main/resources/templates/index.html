@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
 
 <head>
     <meta charset="UTF-8" />
@@ -52,26 +54,55 @@
                             <span id="spin">이벤트</span>
                         </li>
                     </a>
-                    <a href="#">
+                    <a sec:authorize="isAnonymous()" href="#">
                         <li>
                             <span id="spin navbar-menu" onclick="doDisplay()">로그인</span>
                         </li>
                     </a>
-                    <a href="/join">
+                    <a sec:authorize="isAuthenticated()" th:href="@{/logout}">
+                        <li>
+                            <span id="spin navbar-menu">로그아웃</span>
+                        </li>
+                    </a>
+                    <a sec:authorize="isAnonymous()" th:href="@{/signup}">
                         <li>
                             <span id="spin" class="icon">회원가입</span>
                             <i class="fa-regular fa-user"></i>
+                        </li>
+                    </a>
+                    <a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/info}">
+                        <li>
+                            <span id="spin" class="icon">마이페이지</span>
+                            <i class="fa-regular fa-user"></i>
+                        </li>
+                    </a>
+                    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">
+                        <li>
+                            <span id="spin" class="icon">관리자</span>
+
                         </li>
                     </a>
                 </ul>
             </nav>
             <!-- 로그인 -->
             <div class="loginForm" id="myDIV" style="display: none;">
-                <form action="#" method="post" class="form">
+                <!-- Security config의 loginPage("url")와 action url과 동일하게 작성-->
+                <form action="/user/login" method="post" class="form">
+                    <!-- Spring Security가 적용되면 POST 방식으로 보내는 모든 데이터는 csrf 토큰 값이 필요 -->
+                    <input
+                            type="hidden"
+                            th:name="${_csrf.parameterName}"
+                            th:value="${_csrf.token}"
+                    />
+                    <p th:if="${loginError}" class="error">
+                        <script>alert("로그인 정보가 잘못되었습니다.")</script>
+                    </p>
+                    <!-- 로그인 시 아이디의 name 애트리뷰트 값은 username -->
+                    <!-- 파라미터명을 변경하고 싶을 경우 config class formlogin()에서 .usernameParameter("") 명시 -->
                     <label for="userId">아이디</label>
-                    <input type="email" id="userId" placeholder="userEmail@Email.com" required>
+                    <input type="email" id="userId" name="username" placeholder="userEmail@Email.com" required>
                     <label for="userPassword">비밀번호</label>
-                    <input type="password" id="userPassword" placeholder="userPassword" required>
+                    <input type="password" name="password" id="userPassword" placeholder="userPassword" required>
                     <input type="submit" class="btn cyan rounded" value="로그인">
                 </form>
             </div>
@@ -134,7 +165,7 @@
                 <div class="itembox">
                     <div class="itemH4">
                         <a href="#">
-                            <h4>서울둘레길 코스 안내&nbsp;<i class="fa-solid fa-train"></i></h2>
+                            <h4>서울둘레길 코스 안내&nbsp;<i class="fa-solid fa-train"></i></h4>
                         </a>
                     </div>
                     <div class="item">
