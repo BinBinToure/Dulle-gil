@@ -31,14 +31,15 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//	testImplementation 'org.springframework.security:spring-security-test'
 
+	// https://mvnrepository.com/artifact/net.coobird/thumbnailator , 썸네일 만들어주는거
+	implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.18'
 
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'//header, footer
 
-	// Security
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+//	// Security
+//	implementation 'org.springframework.boot:spring-boot-starter-security'
+//	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 }
 
 tasks.named('test') {
