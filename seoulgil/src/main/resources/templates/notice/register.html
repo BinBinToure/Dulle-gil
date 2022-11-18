@@ -5,7 +5,7 @@
 
   <th:block th:fragment="content">
 
-    <h1 class="mt-4">공지사항 등록 페이지</h1>
+    <h1 class="mt-4">이용후기 등록 페이지</h1>
 
     <form th:action="@{/notice/register}" th:method="post"  >
       <div class="form-group">
@@ -61,6 +61,20 @@
     </form>
 
     <script>
+    var token = $("meta[name='_csrf']").attr("content");
+var header = $("meta[name='_csrf_header']").attr("content");
+$(function() {
+    $(document).ajaxSend(function(e, xhr, options) {
+         xhr.setRequestHeader(header,token);
+    });
+});
+
+
+
+
+
+
+
       $(document).ready(function(e) {
 
         var regex = new RegExp("(.*?)\.(exe|sh|zip|alz|tiff)$");

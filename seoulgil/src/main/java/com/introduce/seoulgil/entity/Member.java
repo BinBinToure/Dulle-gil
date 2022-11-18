@@ -1,10 +1,11 @@
 package com.introduce.seoulgil.entity;
 
 import lombok.*;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "com.introduce.seoulgil.entity")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
