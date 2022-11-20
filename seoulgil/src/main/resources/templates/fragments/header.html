@@ -3,18 +3,18 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
 <div th:fragment="header">
-    <nav class="navbar">
+    <nav class="navbar1">
       <div class="nav-container">
         <div class="navbar-logo">
-          <a href="/"><img src="images/main/main_logo.png" alt="서울로고" /></a>
+          <a href="/"><img src="/images/main/main_logo.png" alt="서울로고" /></a>
           <a href="/">뚜벅조</a>
         </div>
         <ul class="navbar-menu">
           <li><a href="http://localhost:8080/#info">둘레길 안내</a></li>
           <li><a href="/courseList">둘레길 코스</a></li>
-          <li><a href="#">이용후기</a></li>
+          <li><a href="/notice/list">이용후기</a></li>
           <li><a href="#">이벤트</a></li>
-          <a sec:authorize="isAnonymous()" >
+          <a sec:authorize="isAnonymous()" href="#">
             <li>
               <span id="spin navbar-menu" onclick="doDisplay()" href="#">로그인</span>
             </li>
