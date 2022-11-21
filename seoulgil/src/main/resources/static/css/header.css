@@ -59,6 +59,31 @@ a {
 }
 
 
+.nav-container.drop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    animation: dropHeader 0.5s;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    /* background-color: rgba(255, 77, 77, 0.507);  */
+    background: #f6f5ef;
+    ;
+    z-index: 1;
+
+}
+
+@keyframes dropHeader {
+    0% {
+        top: -5em;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+
 /* 로그인 */
 
 #myDIV {
