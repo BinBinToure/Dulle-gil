@@ -115,8 +115,7 @@ body {
     animation: dropHeader 0.5s;
     border-bottom: 1px solid rgb(128, 128, 128);
     /* background-color: rgba(255, 77, 77, 0.507);  */
-    background: #f6f5ef;
-    ;
+    background: #f1f1f1;
     z-index: 1;
 
 }
@@ -126,7 +125,7 @@ body {
 }
 
 .mainList.drop span:hover {
-    color: rgb(77, 77, 255);
+    color: white;
 }
 
 @keyframes dropHeader {
@@ -154,8 +153,10 @@ body {
 
 .mainList span {
     margin: 0 1em;
+    padding:8px;
     color: rgb(0, 0, 0);
     position: relative;
+    border-radius:8px;
 }
 
 .mainList span[id]::before {
@@ -167,11 +168,12 @@ body {
     top: 0;
     bottom: 0;
     background-color: rgb(128, 128, 128);
+    margin-top:8px;
 }
 
 .mainList span:hover {
-    color: rgb(255, 92, 92);
-    text-decoration: underline;
+    background-color: gray;
+    color: white;
 }
 
 .mainList span[class] {

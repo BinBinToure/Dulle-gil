@@ -14,8 +14,8 @@
     <script src="https://kit.fontawesome.com/f2f40eee94.js" crossorigin="anonymous"></script>
 
 </head>
-
-<body>
+<!--onload="javascript:pop()"-->
+<body onload="javascript:pop()">
     <div id="wrap">
         <!-- 헤더 -->
         <div class="headerWrap">
@@ -49,9 +49,9 @@
                             <span id="spin">이용후기</span>
                         </li>
                     </a>
-                    <a href="#">
+                    <a href="/board/list">
                         <li>
-                            <span id="spin">이벤트</span>
+                            <span id="spin">공지사항</span>
                         </li>
                     </a>
                     <a sec:authorize="isAnonymous()" href="#">
@@ -164,12 +164,12 @@
             <div class="map_container sa sa-left">
                 <div class="itembox">
                     <div class="itemH4">
-                        <a href="#">
+                        <a href="/courseList">
                             <h4>서울둘레길 코스 안내&nbsp;<i class="fa-solid fa-train"></i></h4>
                         </a>
                     </div>
                     <div class="item">
-                        <a href="#"><img src="images/main/map_ico01.png" alt="코스1">&nbsp;&nbsp;<span>수락 - 불암산</span></a>
+                        <a href="/course1"><img src="images/main/map_ico01.png" alt="코스1">&nbsp;&nbsp;<span>수락 - 불암산</span></a>
 
                     </div>
                     <div class="item">

@@ -149,3 +149,10 @@ function doDisplay() {
     con.style.display = "none";
   }
 }
+
+//팝업창
+
+
+    function pop() {
+          window.open("/pop", "pop", "width=496,height=496,history=no,resizable=no,status=no,scrollbars=yes");
+        }

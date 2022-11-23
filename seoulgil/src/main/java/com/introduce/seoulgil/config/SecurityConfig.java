@@ -70,7 +70,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .deleteCookies("JSESSIONID") // 특정 쿠키 제거
                 .and()
                 // 403 예외처리 핸들링
-                .exceptionHandling().accessDeniedPage("/denied");
+                .exceptionHandling().accessDeniedPage("/denied")
+                .and().csrf().ignoringAntMatchers("/board/modify") //  특정url csrf적용 안함
+                .and().csrf().ignoringAntMatchers("/board/remove"); //  특정url csrf적용 안함
+//        .and().csrf().disable()
     }
 
     /**
