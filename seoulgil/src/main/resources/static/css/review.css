@@ -121,3 +121,6 @@ background-color:rgb(50, 78, 161);;
 #button-box{
     text-align:center;
 }
+#button-header{
+    padding:20px 10px;
+}
