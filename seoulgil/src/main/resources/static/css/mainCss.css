@@ -250,7 +250,7 @@ body {
 
 .background1 {
     width: 100%;
-    background: url("../images/main/squirrel.jpg") fixed;
+    background: url("../images/main/animal.jpg") fixed;
     background-repeat: no-repeat;
     background-position: center;
     height: 800px;
@@ -337,7 +337,7 @@ body {
 .background2 {
     /* display: flex;
     flex-direction: column; */
-    background: url("../images/main/squirrel2.jpg") fixed;
+    background: url("../images/main/squirrel.jpg") fixed;
     background-repeat: no-repeat;
     background-position: center;
     height: 800px;

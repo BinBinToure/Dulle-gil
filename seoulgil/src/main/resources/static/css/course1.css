@@ -106,3 +106,9 @@ iframe{
 #img11:checked ~ .simg11{
     margin-left: -666.7%;
 }
+
+/*헤더*/
+.h1-wrap{
+        height: 300px;
+        background:url('/images/courseInfo/panorama.jpg');
+}

@@ -4,70 +4,90 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
 <div th:fragment="header">
     <nav class="navbar1">
-      <div class="nav-container">
-        <div class="navbar-logo">
-          <a href="/"><img src="/images/main/main_logo.png" alt="서울로고" /></a>
-          <a href="/">뚜벅조</a>
+        <div class="nav-container">
+            <div class="navbar-logo">
+                <a href="/"><img src="/images/main/main_logo.png" alt="서울로고"/></a>
+
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="http://localhost:8080/#info">둘레길 안내</a></li>
+                <li class="course">
+                    <!--  코스헤더-->
+                    <a href="/courseList">둘레길 코스</a>
+                    <div class="sub-header">
+                        <ul class="ul">
+                            <li class="course"><a href="/course1">1.수락·불암산코스</a></li>
+                            <li class="course"><a href="#">2.용마·아차산코스</a></li>
+                            <li class="course"><a href="#">3.고덕·일자산코스</a></li>
+                            <li class="course"><a href="#">4.대모·우면산코스</a></li>
+                            <li class="course"><a href="#">5.관악·호암산코스</a></li>
+                            <li class="course"><a href="#">6.안양천·한강코스</a></li>
+                            <li class="course"><a href="#">7.봉산·앵봉산코스</a></li>
+                            <li class="course"><a href="#">8.북한·도봉산산코스</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li><a href="/notice/list">이용후기</a></li>
+                <li><a href="/board/list">공지사항</a></li>
+                <a sec:authorize="isAnonymous()" href="#">
+                    <li class="icon">
+                        <span id="spin navbar-menu" onclick="doDisplay()" href="#">로그인</span>
+                    </li>
+                </a>
+                <a sec:authorize="isAuthenticated()" th:href="@{/logout}">
+                    <li class="icon">
+                        <span id="spin navbar-menu" onclick="doDisplay()">로그아웃</span>
+                    </li>
+                </a>
+                <a sec:authorize="isAnonymous()" th:href="@{/signup}">
+                    <li class="icon">
+                        <span id="spin" class="icon">회원가입</span>
+                        <i class="fa-regular fa-user"></i>
+                    </li>
+                </a>
+                <a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/info}">
+                    <li class="icon">
+                        <span id="spin" class="icon">마이페이지</span>
+                        <i class="fa-regular fa-user"></i>
+                    </li>
+                </a>
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">
+                    <li class="icon">
+                        <span id="spin" class="icon">관리자</span>
+                        <i class="fa-regular fa-user"></i>
+                    </li>
+                </a>
+            </ul>
+            <ul class="navbar-icons">
+                <li><a href="#"><i class="fa-brands fa-facebook n1"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram n1"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter n1"></i></a></li>
+            </ul>
         </div>
-        <ul class="navbar-menu">
-          <li><a href="http://localhost:8080/#info">둘레길 안내</a></li>
-          <li><a href="/courseList">둘레길 코스</a></li>
-          <li><a href="/notice/list">이용후기</a></li>
-          <li><a href="/board/list">공지사항</a></li>
-          <a sec:authorize="isAnonymous()" href="#">
-            <li class="icon">
-              <span id="spin navbar-menu" onclick="doDisplay()" href="#">로그인</span>
-            </li>
-          </a>
-          <a sec:authorize="isAuthenticated()" th:href="@{/logout}">
-            <li>
-              <span id="spin navbar-menu" onclick="doDisplay()">로그아웃</span>
-            </li>
-          </a>
-          <a sec:authorize="isAnonymous()" th:href="@{/signup}">
-            <li>
-              <span id="spin" class="icon">회원가입</span>
-              <i class="fa-regular fa-user"></i>
-            </li>
-          </a>
-          <a sec:authorize="hasRole('ROLE_MEMBER')" th:href="@{/info}">
-            <li>
-              <span id="spin" class="icon">마이페이지</span>
-              <i class="fa-regular fa-user"></i>
-            </li>
-          </a>
-          <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/admin}">
-            <li>
-              <span id="spin" class="icon">관리자</span>
-              <i class="fa-regular fa-user"></i>
-            </li>
-          </a>
-        </ul>
-        <ul class="navbar-icons">
-          <li><a href="#"><i class="fa-brands fa-facebook n1"></i></a></li>
-          <li><a href="#"><i class="fa-brands fa-instagram n1"></i></a></li>
-          <li><a href="#"><i class="fa-brands fa-twitter n1"></i></a></li>
-        </ul>
-      </div>
     </nav>
+
+
+
     <!-- 로그인 -->
-  <div class="loginForm" id="myDIV" style="display: none;">
-    <form action="/user/login" method="post" class="form">
-<!--      <input-->
-<!--              type="hidden"-->
-<!--              th:name="${_csrf.parameterName}"-->
-<!--              th:value="${_csrf.token}"-->
-<!--      />-->
-      <p th:if="${loginError}" class="error">
-        <script>alert("로그인 정보가 잘못되었습니다.")</script>
-      </p>
-      <!-- 로그인 시 아이디의 name 애트리뷰트 값은 username -->
-      <!-- 파라미터명을 변경하고 싶을 경우 config class formlogin()에서 .usernameParameter("") 명시 -->
-      <label for="userId">아이디</label>
-      <input type="email" id="userId" name="username" placeholder="userEmail@Email.com" required>
-      <label for="userPassword">비밀번호</label>
-      <input type="password" name="password" id="userPassword" placeholder="userPassword" required>
-      <input type="submit" class="btn cyan rounded" value="로그인">
-    </form>
-  </div>
+    <div class="loginForm" id="myDIV" style="display: none;">
+        <form action="/user/login" method="post" class="form">
+            <!--      <input-->
+            <!--              type="hidden"-->
+            <!--              th:name="${_csrf.parameterName}"-->
+            <!--              th:value="${_csrf.token}"-->
+            <!--      />-->
+            <p th:if="${loginError}" class="error">
+                <script>alert("로그인 정보가 잘못되었습니다.")</script>
+            </p>
+            <!-- 로그인 시 아이디의 name 애트리뷰트 값은 username -->
+            <!-- 파라미터명을 변경하고 싶을 경우 config class formlogin()에서 .usernameParameter("") 명시 -->
+            <label for="userId">아이디</label>
+            <input type="email" id="userId" name="username" placeholder="userEmail@Email.com" required>
+            <label for="userPassword">비밀번호</label>
+            <input type="password" name="password" id="userPassword" placeholder="userPassword" required>
+            <input type="submit" class="btn cyan rounded" value="로그인">
+        </form>
+    </div>
 </div>

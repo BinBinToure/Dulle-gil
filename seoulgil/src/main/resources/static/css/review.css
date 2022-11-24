@@ -61,8 +61,6 @@
     text-align:center;
 }
 
-}
-
 
 .form-group{
     width;1300px;
@@ -84,6 +82,13 @@
     line-height:0;
     padding:10px;
 }
+
+/*모달*/
+.modal-content > .modal-bdoy {
+    text-align:center;
+}
+
+
   /*버튼*/
 .button{
     padding: 10px;
